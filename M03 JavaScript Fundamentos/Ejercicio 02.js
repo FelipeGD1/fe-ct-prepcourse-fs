@@ -4,6 +4,7 @@
 function devolverString(string) {
    // Debe retornar un string.
    // Tu código:
+   return string;
 }
 
 // ⛔️ "X" e "Y" son números.
@@ -25,7 +26,7 @@ function resta(x, y) {
 function divide(x, y) {
    // Retorna el resultado de su división.
    // Tu código:
-   var division=x-y;
+   var division=x/y;
    return division;
 }
 
