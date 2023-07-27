@@ -64,15 +64,15 @@ function tieneEmail(objetoUsuario) {
    // En ese caso retornar true. Caso contrario, false.
    // Tu código:
    var tienePropiedad=objetoUsuario.hasOwnProperty('email');
-   if(tienePropiedad=true)return true;
-   else return false;
+   if(tienePropiedad===true)return true;
+   else if(tienePropiedad===false)return false;
 }
 
 function tienePropiedad(objeto, propiedad) {
    // Verifica si el objeto recibido posee una propiedad con el mismo nombre que el parámetro "propiedad".
    // En ese caso retornar true. Caso contrario, false.
    // Tu código:
-   var tienePropiedad=objeto.hasOwnProperty(propiedad);
+   var tienePropiedad=objeto.hasOwnProperty("propiedad");
    if(tienePropiedad=true)return true;
    else return false;
 }
@@ -100,7 +100,7 @@ function agregarAmigo(objetoUsuario, nuevoAmigo) {
    // Debes agregar el "nuevoAmigo" al final de este arreglo.
    // Retornar el objeto.
    // Tu código:
-   objetoUsuario[amigos]= amigos.push(nuevoAmigo);
+   objetoUsuario.amigos.push(nuevoAmigo);
    return objetoUsuario;
 }
 
@@ -122,6 +122,13 @@ function sumarLikesDeUsuario(objetoUsuario) {
    // Cada post posee una propiedad llamada "likes". Esta propiedad es un número.
    // Debes sumar los likes de todos los post y retornar el resultado.
    // Tu código:
+   var sumaLikes=null;
+
+   for(var i=0;i<objetoUsuario["posts"].length;i++){
+      sumaLikes=sumaLikes+objetoUsuario.posts[i].likes;
+   }
+   return sumaLikes;
+
    
 }
 
@@ -136,6 +143,12 @@ function agregarMetodoCalculoDescuento(objetoProducto) {
    // PorcentajeDeDescuento ---> 0.2
    // Precio final ---> 8
    // Tu código:
+
+   objetoProducto["calcularPrecioDescuento"]= function(){
+      var precioFinal= objetoProducto.precio-(objetoProducto.precio*objetoProducto.porcentajeDeDescuento);
+      return precioFinal;
+   }
+   return objetoProducto;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
